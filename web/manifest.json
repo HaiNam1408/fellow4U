@@ -1,6 +1,6 @@
 {
-    "name": "myapp1",
-    "short_name": "myapp1",
+    "name": "fellow4U",
+    "short_name": "fellow4U",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

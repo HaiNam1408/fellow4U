@@ -1,0 +1,82 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+_Exception: Exception: Source directory "C:\Users\Admin\AppData\Local\Temp\flutter_tools.e87eddfa\flutter_tools_chrome_device.781983ad\Default\Workspaces" does not exist, nothing to copy
+
+```
+#0      copyDirectory (package:flutter_tools/src/base/file_system.dart:120:5)
+#1      copyDirectory (package:flutter_tools/src/base/file_system.dart:143:7)
+#2      ChromiumLauncher._cacheUserSessionInformation (package:flutter_tools/src/web/chrome.dart:350:9)
+#3      ChromiumLauncher.launch.<anonymous closure> (package:flutter_tools/src/web/chrome.dart:224:9)
+#4      _rootRun (dart:async/zone.dart:1391:47)
+#5      _CustomZone.run (dart:async/zone.dart:1301:19)
+#6      _FutureListener.handleWhenComplete (dart:async/future_impl.dart:199:18)
+#7      Future._propagateToListeners.handleWhenCompleteCallback (dart:async/future_impl.dart:810:39)
+#8      Future._propagateToListeners (dart:async/future_impl.dart:866:11)
+#9      Future._propagateToListeners (dart:async/future_impl.dart:765:9)
+#10     Future._completeWithValue (dart:async/future_impl.dart:641:5)
+#11     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:715:7)
+#12     _rootRun (dart:async/zone.dart:1399:13)
+#13     _CustomZone.run (dart:async/zone.dart:1301:19)
+#14     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#15     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#16     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#17     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#18     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:123:13)
+#19     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:190:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.13.1, on Microsoft Windows [Version 10.0.19044.2251], locale vi-VN)
+    [32m•[39m Flutter version 3.13.1 on channel stable at D:\dev\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision e1e47221e8 (9 days ago), 2023-08-22 21:43:18 -0700
+    [32m•[39m Engine revision b20183e040
+    [32m•[39m Dart version 3.1.0
+    [32m•[39m DevTools version 2.25.0
+
+[32m[✓][39m Windows Version (Installed version of Windows is version 10 or higher)
+
+[31m[✗][39m Android toolchain - develop for Android devices
+    [31m✗[39m Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[32m[✓][39m Chrome - develop for the web
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[33m[!][39m Visual Studio - develop Windows apps (Visual Studio Community 2022 17.3.5)
+    [32m•[39m Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    [32m•[39m Visual Studio Community 2022 version 17.3.32922.545
+    [31m✗[39m The current Visual Studio installation is incomplete. Please reinstall Visual Studio.
+
+[33m[!][39m Android Studio (not installed)
+    [32m•[39m Android Studio not found; download from https://developer.android.com/studio/index.html
+      (or visit https://flutter.dev/docs/get-started/install/windows#android-setup for detailed instructions).
+
+[32m[✓][39m VS Code (version 1.81.1)
+    [32m•[39m VS Code at C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code
+    [32m•[39m Flutter extension version 3.70.0
+
+[32m[✓][39m Connected device (3 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.19044.2251]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome 114.0.5735.199
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge 116.0.1938.62
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 3 categories.
+```
