@@ -1,9 +1,9 @@
-import 'package:fellow4U/pages/message_page.dart';
-import 'package:fellow4U/pages/notification_page.dart';
-import 'package:fellow4U/pages/profile_page.dart';
+import 'package:fellow4U/pages/message_page/message_page.dart';
+import 'package:fellow4U/pages/notification_page/notification_page.dart';
+import 'package:fellow4U/pages/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'package:fellow4U/pages/explore_page.dart';
-import 'package:fellow4U/pages/my_trips_page.dart';
+import 'package:fellow4U/pages/explore_page/explore_page.dart';
+import 'package:fellow4U/pages/my_trip_page/my_trips_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -81,32 +81,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
           currentIndex: currentIndex,
-          selectedItemColor: const Color(0xFF00CE36),
+          selectedItemColor: Color.fromARGB(255, 0, 206, 165),
           unselectedItemColor: Colors.grey.withOpacity(0.5),
           onTap: onTapNavigatorBar),
       floatingActionButton: const FloatingActionButton(
         onPressed: null,
-        tooltip: 'Add your trip',
-        child: Icon(Icons.add),
+        tooltip: 'New Trip',
+        backgroundColor: Color.fromARGB(255, 0, 206, 165),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(50))),
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+          size: 40,
+        ),
       ),
     );
   }
 }
-
-// class TripCard extends StatelessWidget{
-//   const TripCard({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     throw UnimplementedError();
-//   }
-
-// }
-// MaterialStateProperty.resolveWith<Color?>(
-//                       (Set<MaterialState> states) {
-//                         if (states.contains(MaterialState.pressed)) {
-//                           return Colors.deepPurple[300];
-//                         }
-//                         return Colors.deepPurple[100];
-//                       },
-//                     ),

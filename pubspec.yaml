@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: "^0.9.2"
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,7 +62,23 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/dragon_bridge.png
-  #   - images/a_dot_ham.jpeg
+    - images/dragon_bridge_02.png
+    - images/Tuan_Tran_2.png
+    - images/dai_hung.png
+    - images/dinh_doc_lap.png
+    - images/ha_thu.png
+    - images/duc_ba_church.png
+    - images/lang_bac.png
+    - images/thap_rua_hanoi.png
+    - images/van_mieu_quoc_tu_giam.png
+    - images/opera_sydney.png
+    - images/ha_long_bay.png
+
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "images/app_icon.png"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
