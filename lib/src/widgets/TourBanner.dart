@@ -35,7 +35,7 @@ class _TourBannerState extends State<TourBanner> {
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(12), topRight: Radius.circular(12)),
             image: DecorationImage(
-              image: AssetImage(widget.image),
+              image: NetworkImage(widget.image),
               fit: BoxFit.cover,
             )),
         child: Column(
@@ -56,7 +56,7 @@ class _TourBannerState extends State<TourBanner> {
                     ))
               ],
             ),
-            Row(children: [
+            Row(mainAxisAlignment: MainAxisAlignment.end, children: [
               StarRating(rating: widget.rating),
               SizedBox(width: 4),
               Text(

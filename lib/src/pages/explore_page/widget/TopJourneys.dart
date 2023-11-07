@@ -1,6 +1,10 @@
+import 'package:fellow4U/src/network/TourRequest.dart';
 import 'package:fellow4U/src/pages/explore_page/widget/JourneyCard.dart';
 import 'package:fellow4U/src/widgets/Heading.dart';
 import 'package:flutter/material.dart';
+import 'package:fellow4U/src/network/TourRequest.dart';
+
+import '../../../models/Tour.dart';
 
 class TopJourneys extends StatefulWidget {
   const TopJourneys({super.key});
@@ -10,64 +14,32 @@ class TopJourneys extends StatefulWidget {
 }
 
 class _TopJourneysState extends State<TopJourneys> {
-  List<Map<String, dynamic>> journeys = [
-    {
-      "id": "1",
-      "title": "Ho Guom Trip",
-      "image": "images/thap_rua_hanoi.png",
-      "date": "Feb 2, 2020",
-      "time": "4 days",
-      "like": 1242,
-      "rating": 4.7,
-      "price": 300
-    },
-    {
-      "id": "1",
-      "title": "Quoc Tu Giam Temple",
-      "image": "images/van_mieu_quoc_tu_giam.png",
-      "date": "Feb 2, 2020",
-      "time": "3 days",
-      "like": 2647,
-      "rating": 5.0,
-      "price": 400
-    },
-    {
-      "id": "1",
-      "title": "Hanoi - Ha Long Bay",
-      "image": "images/ha_long_bay.png",
-      "date": "Feb 2, 2020",
-      "time": "3 days",
-      "like": 1447,
-      "rating": 4.2,
-      "price": 400
-    },
-    {
-      "id": "1",
-      "title": "Da Nang - Ba Na",
-      "image": "images/ba_na_hoi_an.png",
-      "date": "Feb 2, 2020",
-      "time": "3 days",
-      "like": 947,
-      "rating": 4.0,
-      "price": 350
-    }
-  ];
+  List<Tour> tourData = [];
+
+  @override
+  void initState() {
+    super.initState();
+    TourRequest.fetchTours().then((dataFromServer) => {
+          setState(() {
+            tourData = dataFromServer;
+          })
+        });
+  }
 
   List<Widget> renderTopJourney() {
     List<Widget> result = [];
+    tourData.sort((a, b) => b.like ?? 0.compareTo(a.like ?? 0));
 
-    journeys.sort((a, b) => b["like"].compareTo(a["like"]));
-
-    for (int i = 0; i < journeys.length; i++) {
+    for (int i = 0; i < tourData.length; i++) {
       result.add(
         JourneyCard(
-            image: journeys[i]["image"],
-            title: journeys[i]["title"],
-            date: journeys[i]["date"],
-            time: journeys[i]["time"],
-            like: journeys[i]["like"],
-            rating: journeys[i]["rating"].toDouble(),
-            price: journeys[i]["price"].toDouble()),
+            image: tourData[i].image ?? '',
+            title: tourData[i].title ?? '',
+            date: tourData[i].date ?? '',
+            time: tourData[i].time ?? '',
+            like: tourData[i].like ?? 0,
+            rating: tourData[i].ratting ?? 5.toDouble(),
+            price: tourData[i].price ?? 0.toDouble()),
       );
     }
 

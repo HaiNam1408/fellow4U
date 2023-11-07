@@ -16,7 +16,8 @@ class _WishListState extends State<WishList> {
       children: [
         TourCard(
           title: 'Meulbourne Sydney',
-          image: 'images/opera_sydney.png',
+          image:
+              'https://res.cloudinary.com/dhbsehvi5/image/upload/v1697907304/Fellow4U/van_mieu_quoc_tu_giam.png',
           date: 'Feb 2, 2020',
           time: '3 days',
           price: 600,
@@ -25,7 +26,8 @@ class _WishListState extends State<WishList> {
         ),
         TourCard(
           title: 'Hanoi - Ha Long Bay',
-          image: 'images/ha_long_bay.png',
+          image:
+              'https://res.cloudinary.com/dhbsehvi5/image/upload/v1697907293/Fellow4U/ha_long_bay.png',
           date: 'Jan 30, 2020',
           time: '3 days',
           price: 300,
